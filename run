@@ -1,0 +1,14 @@
+#!/bin/sh
+
+USAGE=$(cat << END
+vinayraikar.com build script.\n
+dev - run hugo development server\n
+build - run the build
+END
+)
+
+case $1 in
+	dev) hugo server -D ;;
+	build) hugo ;;
+	*) echo $USAGE ;;
+esac
