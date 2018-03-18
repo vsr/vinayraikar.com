@@ -6,4 +6,4 @@ draft: false
 
 Hello there, this is Vinay!
 
-I'm currently building my website from scratch, using Hugo. It's a work-in-progress.
+I'm currently building my website from scratch, using Hugo. It's a [work-in-progress](https://github.com/vsr/vinayraikar.com).
