@@ -3,12 +3,16 @@
 USAGE=$(cat << END
 vinayraikar.com build script.\n
 dev - run hugo development server\n
-build - run the build
+clean - clean the public directory\n
+build - run the build\n
+deploy - deploy to firebase\n
 END
 )
 
 case $1 in
 	dev) hugo server -D ;;
+	clean) rm -rf ./public;;
 	build) hugo ;;
+	deploy) firebase deploy --token $FIREBASE_DEPLOY_TOKEN;;
 	*) echo $USAGE ;;
 esac
