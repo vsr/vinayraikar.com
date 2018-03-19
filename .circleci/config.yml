@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jguyomard/hugo-builder:latest
+      - image: vinayraikar/hugo-firebase:latest
 
     working_directory: ~/repo
     steps:
