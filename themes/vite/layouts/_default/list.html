@@ -1,12 +1,11 @@
-{{ define "main" }}
-<div>{{ .Content }}</div>
-
-<ul>
-    <!-- Ranges through content/post/*.md -->
-    {{ range .Data.Pages }}
-    <li>
-        <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-    </li>
-    {{ end }}
-</ul>
-{{ end }}
+{{ partial "header" . }}
+<div class="pure-g">
+    <div class="pure-u-1">
+        {{ range first 10 .Data.Pages }}
+        <h1>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h1>
+        {{ end }}
+    </div>
+</div>
+{{ partial "footer" . }}
