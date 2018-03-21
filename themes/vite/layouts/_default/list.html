@@ -1,11 +1,14 @@
 {{ partial "header" . }}
-<div class="pure-g">
-    <div class="pure-u-1">
-        {{ range first 10 .Data.Pages }}
-        <h1>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h1>
-        {{ end }}
+<div class="page-content">
+    <div class="row">
+        <div class="twelve columns">
+
+            {{ range first 10 .Data.Pages }}
+            <h1>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h1>
+            {{ end }}
+        </div>
     </div>
 </div>
 {{ partial "footer" . }}
