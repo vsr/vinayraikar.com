@@ -3,4 +3,42 @@
 }
 html {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Layout styles */
+.container {
+}
+
+.page-content {
+  padding: 1rem;
+}
+
+/* Header styles */
+.header {
+  background: #ddd;
+  color: #333;
+}
+.header__content {
+  padding: 1rem;
+}
+.header__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.header__title-link {
+  text-decoration: none;
+}
+.header__menu-list {
+  list-style-type: none;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.header__menu-item {
+  display: inline-block;
+  padding: 0.5em;
+  margin-bottom: 0;
+}
+.header__menu-link {
+  text-decoration: none;
 }
