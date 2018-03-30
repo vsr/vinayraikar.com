@@ -5,7 +5,9 @@ html {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
-
+body {
+  /* font-size: 1em; */
+}
 /* Layout styles */
 .container {
 }
@@ -41,4 +43,8 @@ html {
 }
 .header__menu-link {
   text-decoration: none;
+}
+
+.project-item {
+  list-style-type: none;
 }
