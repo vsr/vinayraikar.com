@@ -10,6 +10,7 @@ body {
 }
 /* Layout styles */
 .container {
+  font-size: 1rem;
 }
 
 .page-content {
@@ -18,8 +19,8 @@ body {
 
 /* Header styles */
 .header {
-  background: #ddd;
   color: #333;
+  border-bottom: 1px solid #bbb;
 }
 .header__content {
   padding: 1rem;
@@ -47,7 +48,6 @@ body {
 
 .project-item {
   list-style-type: none;
-}
 }
 
 .site-footer {
