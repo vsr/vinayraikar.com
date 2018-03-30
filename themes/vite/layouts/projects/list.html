@@ -5,10 +5,12 @@
             {{ .Content }}
         </div>
         <div class="twelve columns">
-            <ul>
+            <ul class="project-list">
                 {{ range first 10 .Data.Pages }}
-                <li>
+                <li class="project-item">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p>{{ .Description }}</p>
+                    <hr/>
                 </li>
                 {{ end }}
             </ul>
