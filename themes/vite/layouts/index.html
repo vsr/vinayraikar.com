@@ -1,37 +1,33 @@
 {{ partial "header" . }}
 <div class="page-content">
     <div class="row">
-        <div class="twelve columns">
-
+        <div class="twelve columns content-body">
             {{ .Content }}
+            <hr/>
         </div>
     </div>
     <div class="row">
-        <div class="six columns">
-            <h3>Recent Blogs</h3>
-            <ul>
+        <div class="six columns highlight-section raised-container">
+            <h3 class="highlight-section__header">Recent Blogs</h3>
+            <ul class="highlight-section__list">
                 {{ range first 5 (where .Data.Pages "Section" "blog") }}
-                <li>
+                <li class="highlight-section__list-item">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </li>
                 {{ end }}
             </ul>
-            <p>
-                <a href="/blog">More...</a>
-            </p>
+            <a class="more-link" href="/blog">Read More...</a>
         </div>
-        <div class="six columns">
-            <h3>Projects</h3>
-            <ul>
+        <div class="six columns highlight-section raised-container">
+            <h3 class="highlight-section__header">Projects</h3>
+            <ul class="highlight-section__list">
                 {{ range first 5 (where .Data.Pages "Section" "projects") }}
-                <li>
+                <li class="highlight-section__list-item">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </li>
                 {{ end }}
             </ul>
-            <p>
-                <a href="/projects">More...</a>
-            </p>
+            <a class="more-link" href="/projects">Read More...</a>
         </div>
     </div>
 </div>{{ partial "footer" . }}
