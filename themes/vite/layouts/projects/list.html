@@ -7,10 +7,9 @@
         <div class="twelve columns">
             <ul class="project-list">
                 {{ range first 10 .Data.Pages }}
-                <li class="project-item">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    <p>{{ .Description }}</p>
-                    <hr/>
+                <li class="project-list__item raised-container">
+                    <a class="project-list__item-title" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p class="project-list__item-description">{{ .Description }}</p>
                 </li>
                 {{ end }}
             </ul>

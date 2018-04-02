@@ -76,8 +76,18 @@ body {
 }
 
 /* Project page styles */
-.project-item {
+.project-list__item {
   list-style-type: none;
+  padding: 1em;
+}
+.project-list__item-title {
+  font-size: 1.5em;
+  letter-spacing: 0.08em;
+  margin-bottom: 1em;
+  display: inline-block;
+}
+.project-list__item-description {
+  margin-bottom: inherit;
 }
 
 /* Footer styles */
