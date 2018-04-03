@@ -1,0 +1,29 @@
+{{ partial "header" . }}
+<div class="page-content">
+    <div class="row">
+        <div class="twelve columns">
+            <h1>{{ .Title }}</h1>
+            <div>{{ .Content }}</div>
+        </div>
+        <div class="twelve columns">
+            <ul class="project-links-list">
+                <li class="project-links-list__item">
+                    <a href="{{ .Params.Link }}">Link</a>
+                </li>
+                {{ if isset .Params "repo" }}
+                <li class="project-links-list__item">
+                    <a href="{{ .Params.Repo }}">Repo</a>
+                </li>
+                {{ end }}
+            </ul>
+            <ul class="tags-list">
+                {{ range .Params.tags }}
+                <li class="tags-list__item">
+                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</div>
+{{ partial "footer" . }}

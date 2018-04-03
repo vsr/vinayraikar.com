@@ -2,7 +2,7 @@
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 description: ""
 repo: ""
-url: ""
+link: ""
 tags: []
 weight: 0
 draft: true

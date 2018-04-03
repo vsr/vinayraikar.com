@@ -95,6 +95,19 @@ a {
   margin-bottom: inherit;
 }
 
+.project-links-list,
+.tags-list {
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+.project-links-list__item,
+.tags-list__item {
+  display: inline-block;
+  padding-right: 1em;
+}
+.project-links-list {
+  font-size: 1.5em;
+}
 /* Footer styles */
 .site-footer {
   font-size: 0.7rem;
