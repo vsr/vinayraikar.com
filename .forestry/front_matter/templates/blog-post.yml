@@ -8,3 +8,10 @@ fields:
 - type: datetime
   name: date
   label: date
+- name: tag
+  type: tag_list
+  default: []
+  label: Tag
+- name: draft
+  type: boolean
+  label: draft
