@@ -15,3 +15,5 @@ fields:
 - name: draft
   type: boolean
   label: draft
+pages:
+- content/blog/test-blog.md
