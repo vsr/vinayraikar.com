@@ -1,7 +1,6 @@
 ---
-title: "Projects"
-date: 2018-03-17T23:27:51+05:30
-draft: false
----
+title: Projects
+date: 2018-03-17T17:57:51.000+00:00
 
-Some of my projects...
+---
+Few projects
