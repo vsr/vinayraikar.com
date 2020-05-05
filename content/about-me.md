@@ -1,7 +1,9 @@
 ---
-title: "About Me"
-date: 2018-03-20T20:37:53+05:30
+title: About Me
+date: 2018-03-20T15:07:53.000+00:00
 draft: true
----
 
-Hello, this page is for telling stuff about me.
+---
+Hello, I am Vinay!
+
+I am a software developer, specializing in building web UI/UX. 
