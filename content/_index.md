@@ -1,9 +1,6 @@
 ---
-title: "VinayRaikar.com: Homepage"
-date: 2018-03-17T23:31:29+05:30
-draft: false
+title: Vinay Raikar
+date: 2018-03-17T18:01:29.000+00:00
+
 ---
-
 Hello there, this is Vinay!
-
-I'm currently building my website from scratch, using Hugo. It's a [work-in-progress](https://github.com/vsr/vinayraikar.com).
