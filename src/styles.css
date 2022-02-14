@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-base-100 text-base-800;
+  }
+  a {
+    @apply text-primary-800 hover:text-primary-700 focus:text-primary-600;
+  }
+  main {
+    @apply flex-grow;
+  }
+}
+
+.fading-image {
+  mask: url("/mask.svg");
+  -webkit-mask-position: center;
+}

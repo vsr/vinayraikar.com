@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+eleventyExcludeFromCollections: true
+permalink: /posts/tags/
+---
+
+<main class="flex-grow w-full max-w-5xl mx-auto">
+  <div class="relative p-8 my-8 lg:p-16 lg:my-16 bg-white lg:rounded-lg overflow-hidden ring-1 ring-gray-900/[0.05]">
+    <div class="absolute inset-0" aria-hidden="true">
+      {% image 'https://images.unsplash.com/photo-1550490652-ce6a20d4ee76', "", "h-40 lg:h-80 w-full object-cover fading-image", "(max-width: 600px) 600px, 1024px" %}
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-8  mt-32 lg:mt-64 ">
+      <div class="text-lg max-w-prose mx-auto">
+        <h1>
+          <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Tags</span>
+        </h1>
+        <p class="mt-8 text-xl text-gray-500 leading-8">All the tags from all the posts</p>
+      </div>
+      <div class="mt-6 prose prose-indigo prose lg:prose-lg text-gray-500 mx-auto">
+        <div class="mt-6 flex flex-wrap gap-2">
+          {% for tag in collections.tagList %}
+            {% set tagUrl %}/posts/tags/{{ tag | slug }}/{% endset %}
+            <a href="{{ tagUrl | url }}" class="no-underline inline-flex items-center px-5 py-2 rounded-md text-xl font-medium bg-gray-100 text-gray-800">
+              {{ tag }}
+              <span class="pl-2 text-sm">({{collections.tagCountMap[tag]}})</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

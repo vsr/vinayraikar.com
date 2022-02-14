@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+---
+<div class="relative bg-slate-700">
+  <div class="relative h-56 bg-slate-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+    <img class="w-full h-full object-cover" src="/IMG_20211014_172135.jpg" alt="">
+    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-slate-300 to-white mix-blend-multiply"></div>
+  </div>
+  <div class="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+    <div class="md:ml-auto md:w-1/2 md:pl-10">
+      <p class="text-base font-semibold uppercase tracking-wider text-gray-300">Hello, ನಮಸ್ಕಾರ!</p>
+
+      <p class="mt-3 text-lg text-gray-100">
+        <span class="mt-2 text-white text-3xl font-bold tracking-tight sm:text-4xl">I'm Vinay,</span>
+        <br/>
+        a software professional from Bangalore, who loves to build stuff on and for the web.
+        I intend to write primarily about my work and also some things running in my head.
+        </p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+      <div>
+        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Recent posts</h2>
+        <p class="mt-3 text-xl text-gray-500 sm:mt-4">{{metadata.blogIntro}}</p>
+      </div>
+
+      {% set postslist = collections.posts | head(-3) %}
+      {% set postslistCounter = collections.posts | length %}
+      {% include "layouts/postslist.njk" %}
+
+      <p class="mt-16 pt-8 text-right">
+        <a class="text-base font-semibold" href="{{ '/posts/' | url }}">Browse more posts</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="bg-white  pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+      <div>
+        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Projects</h2>
+        <p class="mt-3 text-xl text-gray-500 sm:mt-4">{{metadata.projectIntro}}</p>
+      </div>
+
+      {% set projectslist = collections.projects | head(-3) %}
+      {% include "layouts/projectslist.njk" %}
+
+      <p class="mt-16 pt-8 text-right">
+        <a class="text-base font-semibold" href="{{ '/projects/' | url }}">Browse more projects</a>
+      </p>
+    </div>
+  </div>
+</div>

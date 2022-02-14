@@ -1,0 +1,99 @@
+---
+pagination:
+  data: collections.posts
+  size: 2
+  reverse: true
+  alias: entries
+layout: layouts/base.njk
+permalink: /posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+---
+<main class="flex-grow ">
+
+  <div class=" pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl ">
+      <div class="">
+        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Blog posts</h2>
+        <p class="mt-3 text-xl text-gray-500 sm:mt-4">{{metadata.blogIntro}}</p>
+      </div>
+
+      {% set postslist = entries %}
+      {% include "layouts/postslist.njk" %}
+
+      {% set paginationNavClass = 'inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %}
+      {% set paginationNavDisabledClass = 'inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md bg-gray-200 text-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %}
+      <div class="mt-16 pt-8 ">
+        <nav aria-labelledby="my-pagination" class="flex">
+          <h2 id="my-pagination" class="sr-only">Browse more posts</h2>
+          <ol class="flex justify-between w-full">
+            <li>
+              {% if pagination.href.previous %}
+                <a href="{{ pagination.href.previous }}" class="{{paginationNavClass}}">Previous</a>
+              {% else %}
+                <span  href="#" class="{{paginationNavDisabledClass}}">Previous</span>
+              {% endif %}
+            </li>
+            <li>
+              {% if pagination.href.next %}
+                <a href="{{ pagination.href.next }}"  class="{{paginationNavClass}}">Next</a>
+              {% else %}
+                <span disabled href="#"  class="{{paginationNavDisabledClass}}">Next</span>
+              {% endif %}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  {#
+  <table>
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Page Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for entry in entries %}
+        <tr>
+          <td>
+            <a href="{{ entry.url }}">
+              <code>{{ entry.url }}</code>
+            </a>
+          </td>
+          <td>{{ entry.data.title }}</td>
+        </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+
+  <nav aria-labelledby="my-pagination">
+    <h2 id="my-pagination">This is my Pagination</h2>
+    <ol>
+      {%- for pageEntry in pagination.pages %}
+        <li>
+          <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a>
+        </li>
+      {%- endfor %}
+    </ol>
+  </nav>
+  <nav aria-labelledby="my-pagination">
+    <h2 id="my-pagination">This is my Pagination</h2>
+    <ol>
+      <li>
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}">Previous</a>
+        {% else %}Previous{% endif %}
+      </li>
+      {%- for pageEntry in pagination.pages %}
+        <li>
+          <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a>
+        </li>
+      {%- endfor %}
+      <li>
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}">Next</a>
+        {% else %}Next{% endif %}
+      </li>
+    </ol>
+  </nav> #}
+</main>

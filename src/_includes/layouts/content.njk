@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+<div class="flex-grow w-full max-w-5xl mx-auto">
+  <div class="relative p-8 my-8 lg:p-16 lg:my-16 bg-white lg:rounded-lg overflow-hidden ring-1 ring-gray-900/[0.05]">
+    {% if postImage %}
+      <div class="absolute inset-0" aria-hidden="true">
+        {% image postImage, "", "h-40 lg:h-80 w-full object-cover fading-image", "(max-width: 600px) 600px, 1024px" %}
+      </div>
+    {% endif %}
+
+    <div class="relative px-4 sm:px-6 lg:px-8  {% if postImage -%}mt-32 lg:mt-64 {%- endif %}">
+      <div class="text-lg max-w-prose mx-auto">
+        <h1>
+          <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{title}}</span>
+        </h1>
+        {% if description %}
+          <p class="mt-8 text-xl text-gray-500 leading-8">{{description}}</p>
+        {% endif %}
+      </div>
+      <div class="mt-16 prose prose-indigo prose lg:prose-lg text-gray-500 mx-auto">
+        {{content | safe}}
+      </div>
+    </div>
+  </div>
+</div>

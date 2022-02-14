@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title}}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+    <link rel="manifest" href="/vinayraikar.webmanifest">
+    <link rel="icon" href="/static/icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/main.css" >
+  </head>
+  <body  class="min-h-screen flex flex-col {% if templateClass %}{{ templateClass }}{% endif %}">
+    {% include "layouts/header.njk" %}
+    <main class="flex-grow w-full max-w-7xl mx-auto">
+      {{ content | safe }}
+    </main>
+    {% include "layouts/footer.njk" %}
+  </body>
+</html>

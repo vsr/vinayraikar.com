@@ -1,0 +1,29 @@
+{
+  "title": "Vinay Raikar",
+  "url": "https://vinayraikar.com/",
+  "language": "en",
+  "description": "What is Mr. Vinay Raikar thinking? What is he upto now?",
+  "feed": {
+    "subtitle": "What is Mr. Vinay Raikar thinking? What is he upto now?",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://vinayraikar.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://vinayraikar.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Vinay Raikar",
+    "email": "blog@vinayraikar.com",
+    "url": "https://vinayraikar.com/about/"
+  },
+  "navLinks": [
+    { "text": "Blog", "href": "/posts/" },
+    { "text": "Projects", "href": "/projects/" },
+    { "text": "About", "href": "/about/" }
+  ],
+  "_navLinks": [{ "text": "Notes", "href": "/notes/" }],
+  "blogIntro": "<A short intro about topics I write about.>",
+  "projectIntro": "<A short intro about the projects.>"
+}

@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-post
+---
+
+<main class="w-full max-w-5xl mx-auto">
+  <div class="relative p-8 my-8 lg:p-16 lg:my-16 bg-white lg:rounded-lg overflow-hidden">
+    {% if postImage %}
+      <div class="absolute inset-0" aria-hidden="true">
+        {% image postImage, "", "h-40 lg:h-80 w-full object-cover fading-image", "(max-width: 600px) 600px, 1024px" %}
+      </div>
+    {% endif %}
+
+    <div class="relative px-4 sm:px-6 lg:px-8  {% if postImage -%}mt-32 lg:mt-64 {%- endif %}">
+      <div class="text-lg max-w-prose mx-auto">
+        <h1>
+          <a href="{{page.url}}" class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{title}}</a>
+        </h1>
+      </div>
+
+      <div class="flex prose lg:prose-lg mx-auto justify-end items-center my-2 py-2  ">
+        <time datetime="{{ page.date | htmlDateString }}" class=" text-sm text-gray-500">{{ page.date | readableDate }}</time>
+      </div>
+
+      <div class="my-6 prose prose-indigo prose lg:prose-lg text-gray-500 mx-auto">
+        {{content | safe}}
+      </div>
+
+      <div class="flex prose lg:prose-lg text-gray-500 mx-auto justify-end items-center my-2 py-2  ">
+        <div class=" flex items-center">
+          {%- for tag in tags | filterTagList -%}
+            {%- set tagUrl %}/posts/tags/{{ tag | slug }}/{% endset -%}
+            <a href="{{ tagUrl | url }}" class="inline-flex items-center no-underline px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 mr-2">{{ tag }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+
+      {%- if collections.posts %}
+        {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+        {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+        {%- if nextPost or previousPost %}
+          <ul class="my-6 p-4 border-t-2 flex flex-col gap-3">
+            {%- if nextPost %}
+              <li>Next post: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+              </li>
+            {% endif %}
+            {%- if previousPost %}
+              <li>Previous post: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+              </li>
+            {% endif %}
+          </ul>
+        {%- endif %}
+      {%- endif %}
+
+    </div>
+  </div>
+</main>

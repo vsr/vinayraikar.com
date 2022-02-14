@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/project.njk",
+  "tags": "projects",
+  "order": 9999
+}

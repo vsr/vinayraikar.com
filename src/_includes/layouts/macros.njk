@@ -1,0 +1,6 @@
+{% macro navLinks(links, url) %}
+  {% for navLink in links %}
+    {% set active = navLink.href == url %}
+    <a href="{{navLink.href}}" class="text-base font-medium {%if active %}border-b-2{% endif %}" {% if active %}aria-current="true"{% endif %}>{{navLink.text}}</a>
+  {% endfor %}
+{% endmacro %}

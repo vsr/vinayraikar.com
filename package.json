@@ -1,0 +1,41 @@
+{
+  "name": "vinayraikar.com",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "eleventy": "eleventy",
+    "start": "concurrently \"eleventy --serve\" \"npm run styles\" ",
+    "build": "eleventy && tailwindcss -i ./src/styles.css -o ./dist/main.css --minify",
+    "styles": "tailwindcss -i ./src/styles.css -o ./dist/main.css --watch",
+    "clean": "rm -rf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsr/vinayraikar.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsr/vinayraikar.com/issues"
+  },
+  "homepage": "https://github.com/vsr/vinayraikar.com#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "lodash": "^4.17.21",
+    "striptags": "^3.2.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-img": "^1.0.0",
+    "@11ty/eleventy-navigation": "^0.3.2",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "@tailwindcss/typography": "^0.5.1",
+    "autoprefixer": "^10.4.2",
+    "concurrently": "^7.0.0",
+    "luxon": "^2.3.0",
+    "markdown-it": "^12.3.2",
+    "markdown-it-anchor": "^8.4.1",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.18"
+  }
+}
